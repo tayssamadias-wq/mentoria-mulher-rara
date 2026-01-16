@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentoria Resgate do Feminino | Tayssa Machado</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            wine: '#4a0e1c',
+                            wineDark: '#2b050d',
+                            gold: '#c5a059',
+                            goldLight: '#eecfa1',
+                            nude: '#f9f5f2',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'texture': "url('https://www.transparenttextures.com/patterns/cubes.png')",
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Efeito de brilho no botão */
+        @keyframes shine {
+            0% { left: -100%; opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { left: 100%; opacity: 0; }
+        }
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shine::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-20deg);
+            animation: shine 3s infinite;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 md:px-8 py-20 bg-gradient-to-b from-brand-wine to-brand-wineDark overflow-hidden">
+        
+        <div class="absolute inset-0 bg-texture opacity-10 pointer-events-none"></div>
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-3xl h-full bg-brand-wineLight opacity-20 blur-[100px] pointer-events-none rounded-full"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+            
+            <div class="mb-8 animate-fade-in-down">
+                <span class="inline-block py-1 px-4 rounded-full border border-brand-gold/30 bg-brand-gold/5 text-brand-goldLight text-xs md:text-sm font-serif tracking-[0.2em] uppercase">
+                    Mentoria Exclusiva
+                </span>
+            </div>
+
+            <h1 class="font-serif text-3xl md:text-5xl lg:text-6xl leading-tight text-white mb-8 drop-shadow-2xl">
+                <span class="block text-gray-400 font-light text-2xl md:text-4xl mb-2 opacity-80">
+                    A "Mulher Comum" é apenas uma cicatriz.
+                </span>
+                <span class="block bg-gradient-to-r from-brand-goldLight via-brand-gold to-brand-goldLight bg-clip-text text-transparent font-bold italic scale-105 transform">
+                    A "Mulher Rara" é a sua<br> verdadeira essência.
+                </span>
+            </h1>
+
+            <div class="w-24 h-px bg-gradient-to-r from-transparent via-brand-gold to-transparent opacity-50 mb-8"></div>
+
+            <p class="font-sans text-gray-200 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-12">
+                Feminilidade não é adicionar mais regras, roupas ou comportamentos. 
+                <strong class="text-white font-normal">É retirar o peso dos traumas e feridas que esconde a sua luz.</strong>
+                <br class="hidden md:block mt-2">
+                Descubra como se tornar leve, magnética e segura em 8 semanas.
+            </p>
+
+            <div class="flex flex-col items-center w-full">
+                
+                <a href="#aplicacao" class="btn-shine group relative inline-flex items-center justify-center bg-gradient-to-r from-[#c5a059] to-[#aa8539] hover:from-[#d4af66] hover:to-[#bfa052] text-white font-serif font-bold text-xl md:text-2xl py-6 px-10 md:px-14 rounded-sm shadow-[0_0_20px_rgba(197,160,89,0.3)] hover:shadow-[0_0_40px_rgba(197,160,89,0.5)] transition-all duration-300 transform hover:-translate-y-1 w-full md:w-auto tracking-wide">
+                    QUERO RETIRAR MINHA ARMADURA
+                </a>
+
+                <div class="mt-4 flex items-center justify-center gap-2 text-brand-goldLight/80 text-xs md:text-sm font-sans tracking-wide uppercase">
+                    <span class="flex items-center">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-gold mr-2 animate-pulse"></span>
+                        Turma Fechada
+                    </span>
+                    <span class="opacity-50">|</span>
+                    <span>Início em 31/01</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-brand-gold/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+
+    </section>
+
+</body>
+</html>
